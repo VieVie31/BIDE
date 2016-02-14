@@ -6,19 +6,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="494.0" AnchorPane.bottomAnchor="361.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
         <items>
-          <Button mnemonicParsing="false" text="Execute" />
+          <Button id="executeBtn"  mnemonicParsing="false" text="Execute" />
         </items>
       </ToolBar>
       <SplitPane dividerPositions="0.5" layoutX="102.0" layoutY="91.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="39.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextArea layoutX="21.0" prefHeight="200.0" prefWidth="200.0" promptText="Type your BF code here..." AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
+                  <TextArea id="bfProgramTextArea" layoutX="21.0" prefHeight="200.0" prefWidth="200.0" promptText="Type your BF code here..." AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -29,7 +28,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TextArea editable="false" layoutX="-187.0" layoutY="-13.0" prefHeight="200.0" prefWidth="200.0" promptText="Output..." AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
+                                    <TextArea id="outputTextArea" editable="false" layoutX="-187.0" layoutY="-13.0" prefHeight="200.0" prefWidth="200.0" promptText="Output..." AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
                                  </children>
                               </AnchorPane>
                         </content>
@@ -38,7 +37,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TextArea layoutX="-177.0" layoutY="-3.0" prefHeight="200.0" prefWidth="200.0" promptText="Input buffer..." AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
+                                    <TextArea id="inputTextArea" layoutX="-177.0" layoutY="-3.0" prefHeight="200.0" prefWidth="200.0" promptText="Input buffer..." AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
                                  </children>
                               </AnchorPane>
                         </content>

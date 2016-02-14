@@ -2,8 +2,10 @@ package application;
 
 import java.util.Scanner;
 
+import javafx.scene.control.TextArea;
 
-public class BfVirtualMachine {
+
+public class BfVirtualMachine implements Runnable {
 	protected final int DEFAULT_MEMORY_SIZE = 0x1000;
 	
 	protected Scanner scanner = new Scanner(System.in);
@@ -12,15 +14,16 @@ public class BfVirtualMachine {
 	protected byte[] memory  = null;
 	protected char[] program = null; 
 	
+	protected TextArea inputTextArea = null;
+	protected TextArea outputTextArea = null;
 	
-	public BfVirtualMachine() {
+	protected BfVirtualMachine() {}
+	
+	public BfVirtualMachine(TextArea inputTextArea, TextArea outputTextArea) {
 		this.memory = new byte[DEFAULT_MEMORY_SIZE];
 		this.program = new char[1];
-	}
-	
-	public BfVirtualMachine(int memorySize) {
-		this.memory = new byte[memorySize];
-		this.program = new char[1];
+		this.inputTextArea = inputTextArea;
+		this.outputTextArea = outputTextArea;
 	}
 	
 	protected int eval(final int PROGRAM_COUNTER) {
@@ -43,11 +46,21 @@ public class BfVirtualMachine {
 			case '<':
 				memAdr--;
 				break;
-			case '.':
-				System.out.print(String.format("%c", memory[memAdr]));
+			case '.': //TODO : changer l'output
+				outputTextArea.setText(
+						outputTextArea.
+							getText().
+							concat(String.format("%c", memory[memAdr]))
+						);
+				//System.out.print(String.format("%c", memory[memAdr]));
 				break;
-			case ',':
-				memory[memAdr] = scanner.nextByte();
+			case ',': //TODO : changer l'input
+				memory[memAdr] = (byte) inputTextArea.getText().charAt(0);
+				inputTextArea.setText(
+						inputTextArea.
+							getText(1, inputTextArea.getLength())
+						);
+				//memory[memAdr] = scanner.nextByte();
 				break;
 			default:
 				break;
@@ -76,9 +89,11 @@ public class BfVirtualMachine {
 	public static void main(String[] args) {
 		final String HELLO_WORLD = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
 		
-		BfVirtualMachine bfVirtualMachine = new BfVirtualMachine(32);
+		/*
+		 * BfVirtualMachine bfVirtualMachine = new BfVirtualMachine(32);
 		bfVirtualMachine.setProgram(HELLO_WORLD);
 		bfVirtualMachine.run();
+		*/
 	}
 
 }
