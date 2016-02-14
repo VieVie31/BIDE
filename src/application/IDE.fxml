@@ -6,11 +6,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ToolBar prefHeight="40.0" prefWidth="494.0" AnchorPane.bottomAnchor="361.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+      <ToolBar maxHeight="41.0" prefHeight="41.0" prefWidth="602.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
         <items>
-          <Button id="executeBtn"  mnemonicParsing="false" text="Execute" />
+          <Button id="openBtn" mnemonicParsing="false" text="Open" />
+          <Button id="saveBtn" mnemonicParsing="false" text="Save" />
+          <Button id="executeBtn" mnemonicParsing="false" text="Execute" />
+          <!-- <Button id="stopBtn" mnemonicParsing="false" text="Stop" /> -->
         </items>
       </ToolBar>
       <SplitPane dividerPositions="0.5" layoutX="102.0" layoutY="91.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="39.0">
@@ -42,6 +45,20 @@
                               </AnchorPane>
                         </content>
                       </TitledPane>
+                        <TitledPane animated="false" text="Memory">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView id="memoryTableView" layoutX="48.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                                      <columns>
+                                        <TableColumn editable="false" prefWidth="290.0" text="Adress" />
+                                        <TableColumn minWidth="0.0" prefWidth="290.0" text="Value" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
                     </panes>
                   </Accordion>
                </children>

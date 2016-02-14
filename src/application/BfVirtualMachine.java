@@ -2,6 +2,7 @@ package application;
 
 import java.util.Scanner;
 
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 
 
@@ -16,14 +17,18 @@ public class BfVirtualMachine implements Runnable {
 	
 	protected TextArea inputTextArea = null;
 	protected TextArea outputTextArea = null;
+	protected TableView<?> memoryTableView = null;
 	
 	protected BfVirtualMachine() {}
 	
-	public BfVirtualMachine(TextArea inputTextArea, TextArea outputTextArea) {
+	public BfVirtualMachine(TextArea inputTextArea, TextArea outputTextArea,
+			TableView<?> memoryTableView) {
 		this.memory = new byte[DEFAULT_MEMORY_SIZE];
 		this.program = new char[1];
+		
 		this.inputTextArea = inputTextArea;
 		this.outputTextArea = outputTextArea;
+		this.memoryTableView = memoryTableView;
 	}
 	
 	protected int eval(final int PROGRAM_COUNTER) {
