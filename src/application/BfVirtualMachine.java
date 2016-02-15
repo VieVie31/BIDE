@@ -51,7 +51,7 @@ public class BfVirtualMachine implements Runnable {
 			case '<':
 				memAdr--;
 				break;
-			case '.': //TODO : changer l'output
+			case '.': 
 				outputTextArea.setText(
 						outputTextArea.
 							getText().
@@ -59,7 +59,7 @@ public class BfVirtualMachine implements Runnable {
 						);
 				//System.out.print(String.format("%c", memory[memAdr]));
 				break;
-			case ',': //TODO : changer l'input
+			case ',': 
 				memory[memAdr] = (byte) inputTextArea.getText().charAt(0);
 				inputTextArea.setText(
 						inputTextArea.
